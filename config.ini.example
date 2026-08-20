@@ -3,25 +3,18 @@
 
 [monitor]
 ; 要监控的目标日期列表（YYYY-MM-DD，逗号分隔）
-; 留空 = 监控所有可预约日期
+; 留空 = 监控所有可约日期
 ; 填具体日期 = 只监控这几个，例如 target_dates = 2026-08-23,2026-08-30
+; 启动时仍可手动输入覆盖此值
 target_dates =
 
-; 普通时段轮询间隔（秒）
-interval_normal = 600
-; 高峰时段轮询间隔（秒）
-interval_rush = 30
-
-; 国博放票时间：每天 17:00 - 17:08
-; 16:30 - 17:30 视为高峰时段，脚本会自动切到 interval_rush 频率
+; 轮询间隔在运行时选择（5/10/15/30/60/100/300/600 秒），不在此处配置
 
 [museum]
 ; 国博英文版公开 API（无需登录、无个人信息风险）
-; 一般不用改，除非国博更新接口
-api_url = https://pcticket.chnmuseum.cn/prod-api/basesetting/HallSetting/ingore/gainAllSystemConfig
+; 实际请求固定为 /pool/ingore/getCalendar，按 hallType=91 拿真实库存
+; 此处只配 channel，一般不用改
 api_channel = pc
-api_ticket_use_type = 1
-api_person_type = 1
 
 [notifier]
 ; 通知方式：off / serverchan / email / both

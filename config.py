@@ -3,7 +3,7 @@ from pathlib import Path
 import configparser
 from loguru import logger
 
-CONFIG_PATH = Path("config.ini")
+CONFIG_PATH = Path(__file__).resolve().parent / "config.ini"
 
 
 def load_config(path: Path = CONFIG_PATH) -> configparser.ConfigParser:

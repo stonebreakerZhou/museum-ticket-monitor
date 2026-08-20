@@ -8,7 +8,7 @@ from loguru import logger
 from config import load_config
 
 DEFAULT_TIMEOUT = 10
-BOOKING_URL = "https://pcticket.chnmuseum.cn/museum-en/"
+BOOKING_URL = "https://pcticket.chnmuseum.cn/museum-en/#/personal/index"
 
 
 def notify_available(available: list[dict]) -> None:
