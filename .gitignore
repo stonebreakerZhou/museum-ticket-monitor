@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.Python
+.venv/
+venv/
+
+# 用户自己的配置（可能包含真实密钥）
+config.ini
+
+# 日志
+logs/*.log
+logs/*.log.*
+*.log
+
+# 调试/临时文件
+api_check.json
+api_now.json
+cal_ingore.json
+main_run.log
+test_ssl.py
+smoke_test.py
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 操作系统
+.DS_Store
+Thumbs.db
+desktop.ini

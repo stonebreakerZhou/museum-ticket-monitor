@@ -1,0 +1,40 @@
+; 国博余票监控 - 配置文件示例
+; 复制为 config.ini 后按需修改，config.ini 不会被 git 跟踪
+
+[monitor]
+; 要监控的目标日期列表（YYYY-MM-DD，逗号分隔）
+; 留空 = 监控所有可预约日期
+; 填具体日期 = 只监控这几个，例如 target_dates = 2026-08-23,2026-08-30
+target_dates =
+
+; 普通时段轮询间隔（秒）
+interval_normal = 600
+; 高峰时段轮询间隔（秒）
+interval_rush = 30
+
+; 国博放票时间：每天 17:00 - 17:08
+; 16:30 - 17:30 视为高峰时段，脚本会自动切到 interval_rush 频率
+
+[museum]
+; 国博英文版公开 API（无需登录、无个人信息风险）
+; 一般不用改，除非国博更新接口
+api_url = https://pcticket.chnmuseum.cn/prod-api/basesetting/HallSetting/ingore/gainAllSystemConfig
+api_channel = pc
+api_ticket_use_type = 1
+api_person_type = 1
+
+[notifier]
+; 通知方式：off / serverchan / email / both
+type = off
+
+; Server酱配置（推送到微信，免费）
+; 申请地址：https://sct.ftqq.com/
+serverchan_sendkey =
+
+; 邮件配置（QQ 邮箱示例，其他邮箱改 smtp_host 即可）
+; smtp_pass 是 SMTP 授权码，不是登录密码
+smtp_host = smtp.qq.com
+smtp_port = 465
+smtp_user =
+smtp_pass =
+mail_to =
